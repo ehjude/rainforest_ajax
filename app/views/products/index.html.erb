@@ -1,0 +1,18 @@
+<h1>All products</h1>
+<%= link_to "Create product", new_product_path %>
+<table>
+	<th>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Price</th>
+		</tr>
+	</th>
+	<% @products.each do |product| %>
+		<tr>
+			<td><%= link_to product.name, product_path(product) %></td>
+			<td><%= product.description %></td>
+			<td><%= product.formatted_price %></td>
+		</tr>
+	<% end %>
+</table>
